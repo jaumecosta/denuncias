@@ -1,0 +1,24 @@
+{% extends "layout.html" %} 
+
+{% block main %}
+<form action="/home" method="post">
+    <p>Nombre</p>
+    <input class="input is-medium" type="text" name="nombre" required placeholder="nombre"><br>
+    <p>Primer apellido</p>
+    <input class="input is-medium" type="text" name="primerapellido" required placeholder="primer apellido"><br>
+    <p>Segundo apellido</p>
+    <input class="input is-medium" type="text" name="segundoapellido" required placeholder="segundo apellido"><br>
+    <p>DNI</p>
+    <input class="input is-medium" type="text" name="dni" id="dni" required placeholder="Introduce tu dni"><br>
+    <p>Direecion</p>
+    <input class="input is-medium" type="text" name="direccion" required placeholder="direccion"><br>
+    <p>Telefono</p>
+    <input class="input is-medium" type="text" name="Telefono" required placeholder="Telefono"><br>
+    <p>Fecha nacimiento</p>
+    <input class="input is-medium" type="date" name="nacimiento" required placeholder="Fecha nacimiento"><br>
+    <p>Localizacion</p>
+    <input class="input is-medium" type="text" name="localizacion"><br>
+    <input type="submit" class="btn btn-primary" placeholder="Enviar">
+</form>
+
+{% endblock %}
