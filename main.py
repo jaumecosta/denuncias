@@ -47,5 +47,23 @@ def resultado():
         return render_template('resultado.html', lista_total=limpio)
 
 
+@app.route('/imprimir', methods=['GET', 'POST'])
+def imprimir():
+    if request.method == 'POST':
+        texto = request.form.get('texto')
+        ficha_local = collection.insert_one(
+            {'texto_denuncia': texto}
+        )
+    lista_total = collection.find(
+        {'texto_denuncia': texto}
+
+    )
+    lista_total = list(lista_total)
+    limpio = []
+    for i in range(len(lista_total)):
+        limpio += list(lista_total[i].values())
+    return render_template('resultado.html', lista_total=limpio)
+
+
 if __name__ == "__main__":
     app.run('0.0.0.0', '5000', debug=True)
