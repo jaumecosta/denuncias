@@ -3,7 +3,12 @@
 
 {% block main %}
 
-{{ ficha_local }}
-
-
+{{ lista_total }}
+<form action="/imprimir" method="post">
+    <p>FOTO</p>
+    <input class="input is-medium" type="text" name="nombre" required placeholder="nombre"><br>
+    <p>Texto Denuncia</p>
+    <input class="input is-medium" type="text" name="texto" required placeholder="texto"><br>
+    <input type="submit" class="btn btn-primary" placeholder="Enviar">
+</form>
 {% endblock %}
